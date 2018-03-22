@@ -1,1 +1,0 @@
-[Environment]::SetEnvironmentVariable("MyFirstEV", "Hello World")

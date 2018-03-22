@@ -10,8 +10,7 @@ namespace EnvironmentVariable1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Environment.GetEnvironmentVariable("MyFirstEV"));
-            Console.ReadKey();
+            Console.WriteLine("MY_NEW_VAR = " + Environment.GetEnvironmentVariable("MY_NEW_VAR", EnvironmentVariableTarget.User));
         }
     }
 }
