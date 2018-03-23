@@ -32,8 +32,21 @@ namespace Students
         {
             static void Main(string[] args)
             {
-                Student S1 = new Student();
-                S1.data();
+                int choice = 0;
+                Console.WriteLine("1 - Crear New Student, 2 - Exit");
+                string stringchoice = Console.ReadLine();
+                Int32.TryParse(stringchoice, out choice);
+
+                switch (choice)
+                { 
+                    case 1:
+
+                        Student S1 = new Student();
+                        S1.data();
+                        break;
+                    case 2:
+                        //create text
+                }
 
             }
         }
