@@ -13,29 +13,36 @@ namespace PooVueling.Tests
     {   //I am defining from which Interface to get the methods - ICal.
         ICalculadora iCalculadora = new Calculadora();
 
-        [TestMethod()]
-        public void DivisionTest()
+        [DataRow(4, 2, 2)]
+        [DataRow(6, 3, 2)]
+        [DataTestMethod()]
+        public void DivisionTest(int num1, int num2, int resultado)
         {
-            Assert.IsTrue(iCalculadora.Division(4,2)==2);
+            Assert.IsTrue(iCalculadora.Division(num1, num2) == resultado);
         }
 
-        [TestMethod()]
-        public void MultiplicationTest()
+        [DataRow(2, 2, 4)]
+        [DataRow(1, 2, 2)]
+        [DataTestMethod()]
+        public void MultiplicationTest(int num1, int num2, int resultado)
         {
-            Assert.IsTrue(iCalculadora.Multiplication(2,2)== 4);
+            Assert.IsTrue(iCalculadora.Multiplication(num1, num2) == resultado);
         }
 
-        [TestMethod()]
-        public void RestaTest()
+        [DataRow(3, 2, 1)]
+        [DataRow(4, 2, 2)]
+        [DataTestMethod()]
+        public void RestaTest(int num1, int num2, int resultado)
         {
-           Assert.IsTrue(iCalculadora.Resta(3, 1) == 2);
+            Assert.IsTrue(iCalculadora.Resta(num1, num2) == resultado);
         }
 
-        [TestMethod()]
-        public void SumaTest()
+        [DataRow(2, 2, 4)]
+        [DataRow(3, 3, 6)]
+        [DataTestMethod]
+        public void SumaTest(int num1, int num2, int resultado)
         {
-            Assert.IsTrue(iCalculadora.Suma(2, 2) == 4);
-            //Assert.Fail();
+            Assert.IsTrue(iCalculadora.Suma(num1, num2) == resultado);
         }
     }
 }
