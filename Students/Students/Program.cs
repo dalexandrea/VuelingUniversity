@@ -1,37 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Student
+
+namespace Students
 {
-    class Student
+    class Program
     {
-        string ID;
-        string Name;
-        string Surname;
-        string DNI;
-
-
-        public void data()
-        {
-            Console.WriteLine("ID: ");
-            ID = Console.ReadLine();
-            Console.WriteLine("Name: ");
-            Name = Console.ReadLine();
-            Console.WriteLine("Surname: ");
-            Surname = Console.ReadLine();
-            Console.WriteLine("DNI: ");
-            DNI = Console.ReadLine();
-        }
-        class Student1
+        static void Main(string[] args)
         {
 
-            static void Main(string[] args)
+            Console.WriteLine("1- Create student: ");
+            Console.WriteLine("2- Exit: ");
+            int option = int.Parse(Console.ReadLine());
+
+            int id;
+            string name;
+            string surname;
+            string dni;
+
+
+            switch (option)
             {
-                Student S1 = new Student();
-                S1.data();
+                case 1:
+                    Console.WriteLine("ID: ");
+                    id = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Name: ");
+                    name = Console.ReadLine();
+                    Console.WriteLine("Surname: ");
+                    surname = Console.ReadLine();
+                    Console.WriteLine("DNI: ");
+                    dni = Console.ReadLine();
+
+                    using (System.IO.StreamWriter writer = new System.IO.StreamWriter(@"C:\student.txt"))
+                    {
+                        FileStream FileStream = new FileStream("StudentData.txt", FileMode.Create, FileMode.Write);
+                        writer.WriteLine(id + "," + name + "," + surname + "," + dni);
+                    }
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
             }
+
         }
     }
 }
