@@ -6,51 +6,52 @@ using System.Threading.Tasks;
 
 namespace PooVueling
 {
-    public class Program : Calculadora
+    class Program
     {
         static void Main(string[] args)
-        {   //guardar eleccion
-            int operation = 0;
-            //guardar el resultado de la eleccion
+        {
+            ICalculadora iCalculadora = new Calculadora();
+            //use for the string operation choice
+            int operation;
+            //stock the result of the operation
             double result = 0;
 
-            //pide number 1
-            Console.WriteLine("Elegir primer numero");
+            //Ask user first number
+            Console.WriteLine("Type you first number :");
             string stringFirstNumber = Console.ReadLine();
-            double firstNumber = Convert.ToDouble(stringFirstNumber);
+            double num1 = Convert.ToDouble(stringFirstNumber);
 
-            //pide number 2
-            Console.WriteLine("Elegir segundo numero");
+            //Ask user second number
+            Console.WriteLine("Type you second number :");
             string stringSecondNumber = Console.ReadLine();
-            double secondNumber = Convert.ToDouble(stringSecondNumber);
+            double num2 = Convert.ToDouble(stringSecondNumber);
 
-            //lista opciones y preguntar eleccion
-            Console.WriteLine("Elegir entre 1 +,2 -,3 *,4 /,5 exit ");
-            string stringOperation = Console.ReadLine();
-            Int32.TryParse(stringOperation.Text, out operation);
+            //Ask user operation to use
+            Console.WriteLine("Enter the operation 1) + 2) - 3) * 4) / ");
+            operation = int.Parse(Console.ReadLine());
 
+            
+            //Do someting depending on the operation choose
             switch (operation)
             {
                 case 1:
-                    result = Suma(firstNumber, secondNumber);
+                    result = iCalculadora.Suma(num1, num2);
                     break;
 
                 case 2:
-                    result = Resta(firstNumber, secondNumber);
+                    result = iCalculadora.Resta(num1, num2);
                     break;
 
                 case 3:
-                    result = Multiplication(firstNumber, secondNumber);
+                    result = iCalculadora.Multiplication(num1, num2);
                     break;
 
                 case 4:
-                    result = Division(firstNumber, secondNumber);
-                    break;
-                case 5:
+                    result = iCalculadora.Division(num1, num2);
                     break;
 
             }
-            Console.WriteLine("Result" + result);
+            Console.WriteLine("\nResult " + result );
             Console.ReadKey();
         }
     }
