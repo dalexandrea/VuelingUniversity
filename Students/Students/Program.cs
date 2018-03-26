@@ -35,9 +35,9 @@ namespace Students
                     Console.WriteLine("DNI: ");
                     dni = Console.ReadLine();
 
-                    using (System.IO.StreamWriter writer = new System.IO.StreamWriter(@"C:\student.txt"))
+                    using (System.IO.StreamWriter writer = new System.IO.StreamWriter(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "StudentList.txt"))) 
                     {
-                        FileStream FileStream = new FileStream("StudentData.txt", FileMode.Create, FileAccess.Write);
+                        FileStream FileStream = new FileStream("student.txt", FileMode.Create, FileAccess.Write);
                         writer.WriteLine(id + "," + name + "," + surname + "," + dni);
                     }
                     break;
