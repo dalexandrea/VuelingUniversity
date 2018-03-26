@@ -37,11 +37,12 @@ namespace Students
 
                     using (System.IO.StreamWriter writer = new System.IO.StreamWriter(@"C:\student.txt"))
                     {
-                        FileStream FileStream = new FileStream("StudentData.txt", FileMode.Create, FileMode.Write);
+                        FileStream FileStream = new FileStream("StudentData.txt", FileMode.Create, FileAccess.Write);
                         writer.WriteLine(id + "," + name + "," + surname + "," + dni);
                     }
                     break;
                 case 2:
+                    Console.WriteLine("Exiting");
                     break;
                 default:
                     break;
