@@ -15,12 +15,12 @@ namespace PooVueling
             int result = 0;
 
             Console.WriteLine("Type you first number :");
-            string stringFirstNumber = Console.ReadLine();
-            int num1 = Convert.ToInt32(stringFirstNumber);
+            string stringnum1 = Console.ReadLine();
+            int num1 = Convert.ToInt32(stringnum1);
 
             Console.WriteLine("Type you second number :");
-            string stringSecondNumber = Console.ReadLine();
-            int num2 = Convert.ToInt32(stringSecondNumber);
+            string stringnum2 = Console.ReadLine();
+            int num2 = Convert.ToInt32(stringnum2);
 
             Console.WriteLine("Enter the operation 1) + 2) - 3) * 4) / ");
             operation = int.Parse(Console.ReadLine());
