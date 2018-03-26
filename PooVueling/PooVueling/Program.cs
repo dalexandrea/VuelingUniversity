@@ -11,27 +11,21 @@ namespace PooVueling
         static void Main(string[] args)
         {
             ICalculadora iCalculadora = new Calculadora();
-            //use for the string operation choice
             int operation;
-            //stock the result of the operation
-            double result = 0;
+            int result = 0;
 
-            //Ask user first number
             Console.WriteLine("Type you first number :");
             string stringFirstNumber = Console.ReadLine();
-            double num1 = Convert.ToDouble(stringFirstNumber);
+            int num1 = Convert.ToInt32(stringFirstNumber);
 
-            //Ask user second number
             Console.WriteLine("Type you second number :");
             string stringSecondNumber = Console.ReadLine();
-            double num2 = Convert.ToDouble(stringSecondNumber);
+            int num2 = Convert.ToInt32(stringSecondNumber);
 
-            //Ask user operation to use
             Console.WriteLine("Enter the operation 1) + 2) - 3) * 4) / ");
             operation = int.Parse(Console.ReadLine());
 
             
-            //Do someting depending on the operation choose
             switch (operation)
             {
                 case 1:

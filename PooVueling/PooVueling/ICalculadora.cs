@@ -9,9 +9,9 @@ namespace PooVueling
 
     public interface ICalculadora
     {
-        double Suma(double num1, double num2);
-        double Resta(double num1, double num2);
-        double Multiplication(double num1, double num2);
-        double Division(double num1, double num2);
+        int Suma(int num1, int num2);
+        int Resta(int num1, int num2);
+        int Multiplication(int num1, int num2);
+        int Division(int num1, int num2);
     }
 }
