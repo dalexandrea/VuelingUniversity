@@ -22,7 +22,27 @@ namespace Students2
             this.Surname = surname;
             this.Dni = dni;
         }
-        
+
+        public Student()
+        {
+            Guid = Guid.NewGuid();
+        }
+
+        public override bool Equals(object obj)
+        {
+            var student = obj as Student;
+            return student != null &&
+                ID == student.ID &&
+                Name == student.Name &&
+                Surname == student.Surname &&
+                Dni == student.Dni && Guid == student.Guid;
+        }
+
+        public override int GetHashCode()
+        {
+            var hasCode =  
+            return hashCode;
+        }
     }
 }
 
